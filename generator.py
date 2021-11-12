@@ -7,3 +7,7 @@ new_numbers = random.sample(numbers, 4)
 
 for number in new_numbers:
     print(number)
+
+selected_operator = random.choice(operators)
+
+print(selected_operator)
