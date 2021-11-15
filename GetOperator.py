@@ -12,6 +12,6 @@ class GetOperator:
         self.operators.append("/")
 
     def select(self):
-        
-        selected_operator = random.choice(self.operators)
-        return selected_operator
+
+        selected_operators = random.choices(self.operators, k=3)
+        return selected_operators
