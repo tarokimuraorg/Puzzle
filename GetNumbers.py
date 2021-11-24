@@ -4,9 +4,9 @@ class GetNumbers:
     
     numbers = []
 
-    def __init__(self, numbers):
+    def __init__(self, number1, number2, number3, number4):
 
-        self.numbers = numbers
+        self.numbers = [number1,number2,number3,number4]
 
     def sort(self):
 
