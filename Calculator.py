@@ -64,8 +64,12 @@ class Calculator:
 
         if (self.isPattern1()):
             return self.formulaPattern1()
-        else:
+        elif (self.isPattern2()):
             return self.formulaPattern2()
+        elif (self.isPattern3()):
+            return self.formulaPattern3()
+        else:
+            pass
         
     def formulaPattern1(self):
 
@@ -82,6 +86,18 @@ class Calculator:
     def formulaPattern2(self):
 
         result = "( {} {} {} {} {} ) {} {}".format(self.leftnumber1,
+                                            self.outOperator1,
+                                            self.rightnumber1,
+                                            self.outOperator2,
+                                            self.rightnumber2,
+                                            self.outOperator3,
+                                            self.rightnumber3)
+
+        return result
+
+    def formulaPattern3(self):
+
+        result = "{} {} ( {} {} {} {} {} )".format(self.leftnumber1,
                                             self.outOperator1,
                                             self.rightnumber1,
                                             self.outOperator2,
@@ -290,16 +306,14 @@ class Calculator:
                     else:
                         return False
 
-    def calcPattern2(self):
+    def isPattern2(self):
 
         resulto = 0
 
         if (self.inOperator1 == "*" or self.inOperator1 == "/"):
             
             if (self.inOperator2 == "*" or self.inOperator2 == "/"):
-
-                return None
-                #return False
+                return False
                 
             else:
 
@@ -310,8 +324,7 @@ class Calculator:
                     elif (self.inOperator1 == "/"):
                         resulto = self.leftnumber1 / self.rightnumber1
                     else:
-                        return None
-                        #return False
+                        return False
 
                     resulta1 = 0
                     
@@ -320,28 +333,21 @@ class Calculator:
                     elif (self.inOperator2 == "-"):
                         resulta1 = resulto - self.rightnumber2
                     else:
-                        return None
-                        #return False
+                        return False
 
                     if (self.inOperator3 == "+"):
-                        return resulta1 + self.rightnumber3
-                        #return (resulta1 + self.rightnumber3 == self.answer)
+                        return (resulta1 + self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "-"):
-                        return resulta1 - self.rightnumber3
-                        #return (resulta1 - self.rightnumber3 == self.answer)
+                        return (resulta1 - self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "*"):
-                        return resulta1 * self.rightnumber3
-                        #return (resulta1 * self.rightnumber3 == self.answer)
+                        return (resulta1 * self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "/"):
-                        return resulta1 / self.rightnumber3 
-                        #return (resulta1 / self.rightnumber3 == self.answer)
+                        return (resulta1 / self.rightnumber3 == self.answer)
                     else:
-                        return None
-                        #return False
+                        return False
 
                 else:
-                    return None
-                    #return False
+                    return False
 
         else:
             
@@ -354,8 +360,7 @@ class Calculator:
                     elif (self.inOperator2 == "/"):
                         resulto = self.leftnumber2 / self.rightnumber2
                     else:
-                        return None
-                        #return False
+                        return False
 
                     resulta2 = 0
 
@@ -364,24 +369,18 @@ class Calculator:
                     elif (self.inOperator1 == "-"):
                         resulta2 = self.leftnumber1 - resulto
                     else:
-                        return None
-                        #return False
+                        return False
 
                     if (self.inOperator3 == "*"):
-                        return resulta2 * self.rightnumber3
-                        #return (resulta2 * self.rightnumber3 == self.answer)
+                        return (resulta2 * self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "/"):
-                        return resulta2 / self.rightnumber3
-                        #return (resulta2 / self.rightnumber3 == self.answer)
+                        return (resulta2 / self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "+"):
-                        return resulta2 + self.rightnumber3
-                        #return (resulta2 + self.rightnumber3 == self.answer)
+                        return (resulta2 + self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "-"):
-                        return resulta2 - self.rightnumber3
-                        #return (resulta2 - self.rightnumber3 == self.answer)
+                        return (resulta2 - self.rightnumber3 == self.answer)
                     else:
-                        return None
-                        #return False
+                        return False
 
                 else:
                     
@@ -390,8 +389,7 @@ class Calculator:
                     elif (self.inOperator1 == "-"):
                         resulto = self.leftnumber1 - self.rightnumber1
                     else:
-                        return None
-                        #return False
+                        return False
 
                     resulta3 = 0
 
@@ -400,25 +398,138 @@ class Calculator:
                     elif (self.inOperator2 == "-"):
                         resulta3 = resulto - self.rightnumber2
                     else:
-                        return None
-                        #return False
+                        return False
 
                     if (self.inOperator3 == "*"):
-                        return resulta3 * self.rightnumber3
-                        #return (resulta3 * self.rightnumber3 == self.answer)
+                        return (resulta3 * self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "/"):
-                        return resulta3 / self.rightnumber3
-                        #return (resulta3 / self.rightnumber3 == self.answer)
+                        return (resulta3 / self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "+"):
-                        return resulta3 + self.rightnumber3
-                        #return (resulta3 + self.rightnumber3 == self.answer)
+                        return (resulta3 + self.rightnumber3 == self.answer)
                     elif (self.inOperator3 == "-"):
-                        return resulta3 - self.rightnumber3
-                        #return (resulta3 - self.rightnumber3 == self.answer)
+                        return (resulta3 - self.rightnumber3 == self.answer)
                     else:
-                        return None
-                        #return False
+                        return False
 
             else:
-                return None
-                #return False
+                return False
+
+    def isPattern3(self):
+
+        resulto = 0
+        
+        if (self.inOperator2 == "*" or self.inOperator2 == "/"):
+            
+            if (self.inOperator3 == "*" or self.inOperator3 == "/"):
+                
+                if (self.inOperator2 == "*"):
+                    resulto = self.leftnumber2 * self.rightnumber2
+                elif (self.inOperator2 == "/"):
+                    resulto = self.leftnumber2 / self.rightnumber2
+                else:
+                    return False
+
+                resulta1 = 0
+
+                if (self.inOperator3 == "*"):
+                    resulta1 = resulto * self.rightnumber3
+                elif (self.inOperator3 == "/"):
+                    resulta1 = resulto / self.rightnumber3
+                else:
+                    return False
+
+                if (self.inOperator1 == "*"):
+                    return (self.leftnumber1 * resulta1 == self.answer)
+                elif (self.inOperator1 == "/"):
+                    return (self.leftnumber1 / resulta1 == self.answer)
+                else:
+                    return False
+
+            else:
+
+                if (self.inOperator2 == "*"):
+                    resulto = self.leftnumber2 * self.rightnumber2
+                elif (self.inOperator2 == "/"):
+                    resulto = self.leftnumber2 / self.rightnumber2
+                else:
+                    return False
+
+                resulta2 = 0
+                
+                if (self.inOperator3 == "+"):
+                    resulta2 = resulto + self.rightnumber3
+                elif (self.inOperator3 == "-"):
+                    resulta2 = resulto - self.rightnumber3
+                else:
+                    return False
+
+                if (self.inOperator1 == "+"):
+                    return (self.leftnumber1 + resulta2 == self.answer)
+                elif (self.inOperator1 == "-"):
+                    return (self.leftnumber1 - resulta2 == self.answer)
+                elif (self.inOperator1 == "*"):
+                    return (self.leftnumber1 * resulta2 == self.answer)
+                elif (self.inOperator1 == "/"):
+                    return (self.leftnumber1 / resulta2 == self.answer)
+                else:
+                    return False
+
+        else:
+            
+            if (self.inOperator3 == "*" or self.inOperator3 == "/"):
+                
+                if (self.inOperator3 == "*"):
+                    resulto = self.leftnumber3 * self.rightnumber3
+                elif (self.inOperator3 == "/"):
+                    resulto = self.leftnumber3 / self.rightnumber3
+                else:
+                    return False
+
+                resulta3 = 0
+
+                if (self.inOperator2 == "+"):
+                    resulta3 = self.leftnumber2 + resulto
+                elif (self.inOperator2 == "-"):
+                    resulta3 = self.leftnumber2 - resulto
+                else:
+                    return False
+
+                if (self.inOperator1 == "+"):
+                    return (self.leftnumber1 + resulta3 == self.answer)
+                elif (self.inOperator1 == "-"):
+                    return (self.leftnumber1 - resulta3 == self.answer)
+                elif (self.inOperator1 == "*"):
+                    return (self.leftnumber1 * resulta3 == self.answer)
+                elif (self.inOperator1 == "/"):
+                    return (self.leftnumber1 / resulta3 == self.answer)
+                else:
+                    return False
+
+            else:
+                
+                if (self.inOperator2 == "+"):
+                    resulto = self.leftnumber2 + self.rightnumber2
+                elif (self.inOperator2 == "-"):
+                    resulto = self.leftnumber2 - self.rightnumber2
+                else:
+                    return False
+
+                resulta4 = 0
+
+                if (self.inOperator3 == "+"):
+                    resulta4 = resulto + self.rightnumber3
+                elif (self.inOperator3 == "-"):
+                    resulta4 = resulto - self.rightnumber3
+                else:
+                    return False
+
+                if (self.inOperator1 == "+"):
+                    return (self.leftnumber1 + resulta4 == self.answer)
+                elif (self.inOperator1 == "-"):
+                    return (self.leftnumber1 - resulta4 == self.answer)
+                elif (self.inOperator1 == "*"):
+                    return (self.leftnumber1 * resulta4 == self.answer)
+                elif (self.inOperator1 == "/"):
+                    return (self.leftnumber1 / resulta4 == self.answer)
+                else:
+                    return False
