@@ -329,7 +329,7 @@ class Calculator:
             elif (self.inOperator1 == "/"):
                 resulto = self.leftnumber1 / self.rightnumber1
             else:
-                return None
+                return False
                     
             if (self.inOperator2 == "+"):
                 resulto = resulto + self.rightnumber2
@@ -340,7 +340,7 @@ class Calculator:
             elif (self.inOperator2 == "/"):
                 resulto = resulto / self.rightnumber2
             else:
-                return None
+                return False
 
         else:
             
@@ -351,14 +351,14 @@ class Calculator:
                 elif (self.inOperator2 == "/"):
                     resulto = self.leftnumber2 / self.rightnumber2
                 else:
-                    return None
+                    return False
 
                 if (self.inOperator1 == "+"):
                     resulto = self.leftnumber1 + resulto
                 elif (self.inOperator1 == "-"):
                     resulto = self.leftnumber1 - resulto
                 else:
-                    return None
+                    return False
 
             else:
                     
@@ -367,25 +367,25 @@ class Calculator:
                 elif (self.inOperator1 == "-"):
                     resulto = self.leftnumber1 - self.rightnumber1
                 else:
-                    return None
+                    return False
 
                 if (self.inOperator2 == "+"):
                     resulto = resulto + self.rightnumber2
                 elif (self.inOperator2 == "-"):
                     resulto = resulto - self.rightnumber2
                 else:
-                    return None
+                    return False
 
         if (self.inOperator3 == "*"):
-            return resulto * self.rightnumber3
+            return (resulto * self.rightnumber3 == self.answer)
         elif (self.inOperator3 == "/"):
-            return resulto / self.rightnumber3
+            return (resulto / self.rightnumber3 == self.answer)
         elif (self.inOperator3 == "+"):
-            return resulto + self.rightnumber3
+            return (resulto + self.rightnumber3 == self.answer)
         elif (self.inOperator3 == "-"):
-            return resulto - self.rightnumber3
+            return (resulto - self.rightnumber3 == self.answer)
         else:
-            return None
+            return False
         
     def isPattern3(self):
 
