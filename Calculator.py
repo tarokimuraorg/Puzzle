@@ -74,6 +74,10 @@ class Calculator:
             return self.formulaPattern5()
         elif (self.isPattern6()):
             return self.formulaPattern6()
+        elif (self.isPattern7()):
+            return self.formulaPattern7()
+        else:
+            return None
         
     def formulaPattern1(self):
 
@@ -138,6 +142,18 @@ class Calculator:
     def formulaPattern6(self):
 
         result = "{} {} ( {} {} {} ) {} {}".format(self.leftnumber1,
+                                                   self.outOperator1,
+                                                   self.rightnumber1,
+                                                   self.outOperator2,
+                                                   self.rightnumber2,
+                                                   self.outOperator3,
+                                                   self.rightnumber3)
+
+        return result
+
+    def formulaPattern7(self):
+
+        result = "{} {} {} {} ( {} {} {} )".format(self.leftnumber1,
                                                    self.outOperator1,
                                                    self.rightnumber1,
                                                    self.outOperator2,
@@ -660,6 +676,77 @@ class Calculator:
                 return (resulto + self.rightnumber3 == self.answer)
             elif (self.inOperator3 == "-"):
                 return (resulto - self.rightnumber3 == self.answer)
+            else:
+                return False
+
+    def isPattern7(self):
+
+        resulta = 0
+        
+        if (self.inOperator3 == "+"):
+            resulta = self.leftnumber3 + self.rightnumber3
+        elif (self.inOperator3 == "-"):
+            resulta = self.leftnumber3 - self.rightnumber3
+        elif (self.inOperator3 == "*"):
+            resulta = self.leftnumber3 * self.rightnumber3
+        elif (self.inOperator3 == "/"):
+            resulta = self.leftnumber3 / self.rightnumber3
+        else:
+            return False
+
+        resulto = 0
+
+        if (self.inOperator2 == "*" or self.inOperator2 == "/"):
+            
+            if (self.inOperator1 == "*" or self.inOperator1 == "/"):
+                
+                if (self.inOperator1 == "*"):
+                    resulto = self.leftnumber1 * self.rightnumber1
+                elif (self.inOperator1 == "/"):
+                    resulto = self.leftnumber1 / self.rightnumber1
+                else:
+                    return False
+
+                if (self.inOperator2 == "*"):
+                    return (resulto * resulta == self.answer)
+                elif (self.inOperator2 == "/"):
+                    return (resulto / resulta == self.answer)
+                else:
+                    return False
+
+            else:
+                
+                if (self.inOperator2 == "*"):
+                    resulto = self.leftnumber2 * resulta
+                elif (self.inOperator2 == "/"):
+                    resulto = self.leftnumber2 / resulta
+                else:
+                    return False
+
+                if (self.inOperator1 == "+"):
+                    return (self.leftnumber1 + resulto == self.answer)
+                elif (self.inOperator1 == "-"):
+                    return (self.leftnumber1 - resulto == self.answer)
+                else:
+                    return False
+
+        else:
+            
+            if (self.inOperator1 == "*"):
+                resulto = self.leftnumber1 * self.rightnumber1
+            elif (self.inOperator1 == "/"):
+                resulto = self.leftnumber1 / self.rightnumber1
+            elif (self.inOperator1 == "+"):
+                resulto = self.leftnumber1 + self.rightnumber1
+            elif (self.inOperator1 == "-"):
+                resulto = self.leftnumber1 - self.rightnumber1
+            else:
+                return False
+
+            if (self.inOperator2 == "+"):
+                return (resulto + resulta == self.answer)
+            elif (self.inOperator2 == "-"):
+                return (resulto - resulta == self.answer)
             else:
                 return False
             
