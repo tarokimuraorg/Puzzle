@@ -172,6 +172,8 @@ class Calculator:
             if (self.inOperator1 == "*"):
                 resulto = self.leftnumber1 * self.rightnumber1
             elif (self.inOperator1 == "/"):
+                if (self.rightnumber1 == 0):
+                    return False
                 resulto = self.leftnumber1 / self.rightnumber1
             else:
                 return False
@@ -183,6 +185,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resultA1 = resulto * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resultA1 = resulto / self.rightnumber2
                 else:
                     return False
@@ -194,6 +198,8 @@ class Calculator:
                 elif (self.inOperator3 == "*"):
                     return (resultA1 * self.rightnumber3 == self.answer)
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     return (resultA1 / self.rightnumber3 == self.answer)
                 else:
                     return False
@@ -207,6 +213,8 @@ class Calculator:
                     if (self.inOperator3 == "*"):
                         resultB1 = self.leftnumber3 * self.rightnumber3
                     elif (self.inOperator3 == "/"):
+                        if (self.rightnumber3 == 0):
+                            return False
                         resultB1 = self.leftnumber3 / self.rightnumber3
 
                     if (self.inOperator2 == "+"):
@@ -246,6 +254,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = self.leftnumber2 * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resulto = self.leftnumber2 / self.rightnumber2
                 else:
                     return False
@@ -257,6 +267,8 @@ class Calculator:
                     if (self.inOperator3 == "*"):
                         resultA2 = resulto * self.rightnumber3
                     elif (self.inOperator3 == "/"):
+                        if (self.rightnumber3 == 0):
+                            return False
                         resultA2 = resulto / self.rightnumber3
                     else:
                         return False
@@ -298,6 +310,8 @@ class Calculator:
                     if (self.inOperator3 == "*"):
                         resulto = self.leftnumber3 * self.rightnumber3
                     elif (self.inOperator3 == "/"):
+                        if (self.rightnumber3 == 0):
+                            return False
                         resulto = self.leftnumber3 / self.rightnumber3
                     else:
                         return False
@@ -373,6 +387,8 @@ class Calculator:
                 if (self.inOperator1 == "*"):
                     resulto = self.leftnumber1 * self.rightnumber1
                 elif (self.inOperator1 == "/"):
+                    if (self.rightnumber1 == 0):
+                        return False
                     resulto = self.leftnumber1 / self.rightnumber1
                 else:
                     return False
@@ -380,6 +396,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = resulto * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resulto = resulto / self.rightnumber2
                 else:
                     return False
@@ -389,6 +407,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = self.leftnumber2 * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resulto = self.leftnumber2 / self.rightnumber2
                 else:
                     return False
@@ -409,6 +429,8 @@ class Calculator:
             elif (self.inOperator1 == "*"):
                 resulto = self.leftnumber1 * self.rightnumber1
             elif (self.inOperator1 == "/"):
+                if (self.rightnumber1 == 0):
+                    return False
                 resulto = self.leftnumber1 / self.rightnumber1
             else:
                 return False
@@ -421,6 +443,8 @@ class Calculator:
         if (self.inOperator3 == "*"):
             return (resulto * self.rightnumber3 == self.answer)
         elif (self.inOperator3 == "/"):
+            if (self.rightnumber3 == 0):
+                return False
             return (resulto / self.rightnumber3 == self.answer)
         elif (self.inOperator3 == "+"):
             return (resulto + self.rightnumber3 == self.answer)
@@ -440,6 +464,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = self.leftnumber2 * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resulto = self.leftnumber2 / self.rightnumber2
                 else:
                     return False
@@ -447,6 +473,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     resulto = resulto * self.rightnumber3
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     resulto = resulto / self.rightnumber3
                 else:
                     return False
@@ -456,6 +484,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     resulto = self.leftnumber3 * self.rightnumber3
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     resulto = self.leftnumber3 / self.rightnumber3
                 else:
                     return False
@@ -476,6 +506,8 @@ class Calculator:
             elif (self.inOperator2 == "*"):
                 resulto = self.leftnumber2 * self.rightnumber2
             elif (self.inOperator2 == "/"):
+                if (self.rightnumber2 == 0):
+                    return False
                 resulto = self.leftnumber2 / self.rightnumber2
             else:
                 return False
@@ -494,6 +526,8 @@ class Calculator:
         elif (self.inOperator1 == "*"):
             return (self.leftnumber1 * resulto == self.answer)
         elif (self.inOperator1 == "/"):
+            if (resulto == 0):
+                return False
             return (self.leftnumber1 / resulto == self.answer)
         else:
             return False
@@ -509,6 +543,8 @@ class Calculator:
         elif (self.inOperator1 == "*"):
             resulta1 = self.leftnumber1 * self.rightnumber1
         elif (self.inOperator1 == "/"):
+            if (self.rightnumber1 == 0):
+                return False
             resulta1 = self.leftnumber1 / self.rightnumber1
         else:
             return False
@@ -522,6 +558,8 @@ class Calculator:
         elif (self.inOperator3 == "*"):
             resultb1 = self.leftnumber3 * self.rightnumber3
         elif (self.inOperator3 == "/"):
+            if (self.rightnumber3 == 0):
+                return False
             resultb1 = self.leftnumber3 / self.rightnumber3
         else:
             return False
@@ -533,6 +571,8 @@ class Calculator:
         elif (self.inOperator2 == "*"):
             return (resulta1 * resultb1 == self.answer)
         elif (self.inOperator2 == "/"):
+            if (resultb1 == 0):
+                return False
             return (resulta1 / resultb1 == self.answer)
         else:
             return False
@@ -548,6 +588,8 @@ class Calculator:
         elif (self.inOperator1 == "*"):
             resulta = self.leftnumber1 * self.rightnumber1
         elif (self.inOperator1 == "/"):
+            if (self.rightnumber1 == 0):
+                return False
             resulta = self.leftnumber1 / self.rightnumber1
         else:
             return False
@@ -561,6 +603,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = resulta * self.rightnumber2
                 elif (self.inOperator2 == "/"):
+                    if (self.rightnumber2 == 0):
+                        return False
                     resulto = resulta / self.rightnumber2
                 else:
                     return False
@@ -568,6 +612,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     return (resulto * self.rightnumber3 == self.answer)
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     return (resulto / self.rightnumber3 == self.answer)
                 else:
                     return False
@@ -577,6 +623,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     resulto = self.leftnumber3 * self.rightnumber3
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     resulto = self.leftnumber3 / self.rightnumber3
                 else:
                     return False
@@ -597,6 +645,8 @@ class Calculator:
             elif (self.inOperator2 == "*"):
                 resulto = resulta * self.rightnumber2
             elif (self.inOperator2 == "/"):
+                if (self.rightnumber2 == 0):
+                    return False
                 resulto = resulta / self.rightnumber2
             else:
                 return False
@@ -619,6 +669,8 @@ class Calculator:
         elif (self.inOperator2 == "*"):
             resulta = self.leftnumber2 * self.rightnumber2
         elif (self.inOperator2 == "/"):
+            if (self.rightnumber2 == 0):
+                return False
             resulta = self.leftnumber2 / self.rightnumber2
         else:
             return False
@@ -632,6 +684,8 @@ class Calculator:
                 if (self.inOperator1 == "*"):
                     resulto = self.leftnumber1 * resulta
                 elif (self.inOperator1 == "/"):
+                    if (resulta == 0):
+                        return False
                     resulto = self.leftnumber1 / resulta
                 else:
                     return False
@@ -639,6 +693,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     return (resulto * self.rightnumber3 == self.answer)
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     return (resulto / self.rightnumber3 == self.answer)
                 else:
                     return False
@@ -648,6 +704,8 @@ class Calculator:
                 if (self.inOperator3 == "*"):
                     resulto = resulta * self.rightnumber3
                 elif (self.inOperator3 == "/"):
+                    if (self.rightnumber3 == 0):
+                        return False
                     resulto = resulta / self.rightnumber3
                 else:
                     return False
@@ -664,6 +722,8 @@ class Calculator:
             if (self.inOperator1 == "*"):
                 resulto = self.leftnumber1 * resulta
             elif (self.inOperator1 == "/"):
+                if (resulta == 0):
+                    return False
                 resulto = self.leftnumber1 / resulta
             elif (self.inOperator1 == "+"):
                 resulto = self.leftnumber1 + resulta
@@ -690,6 +750,8 @@ class Calculator:
         elif (self.inOperator3 == "*"):
             resulta = self.leftnumber3 * self.rightnumber3
         elif (self.inOperator3 == "/"):
+            if (self.rightnumber3 == 0):
+                return False
             resulta = self.leftnumber3 / self.rightnumber3
         else:
             return False
@@ -703,6 +765,8 @@ class Calculator:
                 if (self.inOperator1 == "*"):
                     resulto = self.leftnumber1 * self.rightnumber1
                 elif (self.inOperator1 == "/"):
+                    if (self.rightnumber1 == 0):
+                        return False
                     resulto = self.leftnumber1 / self.rightnumber1
                 else:
                     return False
@@ -710,6 +774,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     return (resulto * resulta == self.answer)
                 elif (self.inOperator2 == "/"):
+                    if (resulta == 0):
+                        return False
                     return (resulto / resulta == self.answer)
                 else:
                     return False
@@ -719,6 +785,8 @@ class Calculator:
                 if (self.inOperator2 == "*"):
                     resulto = self.leftnumber2 * resulta
                 elif (self.inOperator2 == "/"):
+                    if (resulta == 0):
+                        return False
                     resulto = self.leftnumber2 / resulta
                 else:
                     return False
@@ -735,6 +803,8 @@ class Calculator:
             if (self.inOperator1 == "*"):
                 resulto = self.leftnumber1 * self.rightnumber1
             elif (self.inOperator1 == "/"):
+                if (self.rightnumber1 == 0):
+                    return False
                 resulto = self.leftnumber1 / self.rightnumber1
             elif (self.inOperator1 == "+"):
                 resulto = self.leftnumber1 + self.rightnumber1
