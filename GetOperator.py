@@ -6,6 +6,8 @@ class GetOperator:
 
     def __init__(self):
 
+        self.operators = []
+
         self.operators.append("+")
         self.operators.append("-")
         self.operators.append("*")
@@ -15,3 +17,4 @@ class GetOperator:
 
         selected_operators = random.choices(self.operators, k=3)
         return selected_operators
+    
