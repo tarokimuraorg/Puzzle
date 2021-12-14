@@ -1,5 +1,7 @@
 class Calculator:
 
+    numberOfFormulas = 0
+
     leftnumber1 = 0
     leftnumber2 = 0
     leftnumber3 = 0
@@ -20,66 +22,72 @@ class Calculator:
 
     def __init__(self, formulas, answer):
 
-        formula1 = formulas[0]
-        formula2 = formulas[1]
-        formula3 = formulas[2]
+        self.numberOfFormulas = len(formulas)
 
-        self.leftnumber1 = formula1["left"]
-        self.rightnumber1 = formula1["right"]
+        if (self.numberOfFormulas == 3):
 
-        self.leftnumber2 = formula2["left"]
-        self.rightnumber2 = formula2["right"]
+            formula1 = formulas[0]
+            formula2 = formulas[1]
+            formula3 = formulas[2]
 
-        self.leftnumber3 = formula3["left"]
-        self.rightnumber3 = formula3["right"]
+            self.leftnumber1 = formula1["left"]
+            self.rightnumber1 = formula1["right"]
 
-        self.inOperator1 = formula1["operator"]
-        self.inOperator2 = formula2["operator"]
-        self.inOperator3 = formula3["operator"]
+            self.leftnumber2 = formula2["left"]
+            self.rightnumber2 = formula2["right"]
 
-        if (self.inOperator1 == "*"):
-            self.outOperator1 = "×"
-        elif (self.inOperator1 == "/"):
-            self.outOperator1 = "÷"
-        else:
-            self.outOperator1 = self.inOperator1
+            self.leftnumber3 = formula3["left"]
+            self.rightnumber3 = formula3["right"]
 
-        if (self.inOperator2 == "*"):
-            self.outOperator2 = "×"
-        elif (self.inOperator2 == "/"):
-            self.outOperator2 = "÷"
-        else:
-            self.outOperator2 = self.inOperator2
+            self.inOperator1 = formula1["operator"]
+            self.inOperator2 = formula2["operator"]
+            self.inOperator3 = formula3["operator"]
 
-        if (self.inOperator3 == "*"):
-            self.outOperator3 = "×"
-        elif (self.inOperator3 == "/"):
-            self.outOperator3 = "÷"
-        else:
-            self.outOperator3 = self.inOperator3
+            if (self.inOperator1 == "*"):
+                self.outOperator1 = "×"
+            elif (self.inOperator1 == "/"):
+                self.outOperator1 = "÷"
+            else:
+                self.outOperator1 = self.inOperator1
 
-        self.answer = answer
+            if (self.inOperator2 == "*"):
+                self.outOperator2 = "×"
+            elif (self.inOperator2 == "/"):
+                self.outOperator2 = "÷"
+            else:
+                self.outOperator2 = self.inOperator2
+
+            if (self.inOperator3 == "*"):
+                self.outOperator3 = "×"
+            elif (self.inOperator3 == "/"):
+                self.outOperator3 = "÷"
+            else:
+                self.outOperator3 = self.inOperator3
+
+            self.answer = answer
 
     def formula(self):
 
-        if (self.isPattern1()):
-            return self.formulaPattern1()
-        elif (self.isPattern2()):
-            return self.formulaPattern2()
-        elif (self.isPattern3()):
-            return self.formulaPattern3()
-        elif (self.isPattern4()):
-            return self.formulaPattern4()
-        elif (self.isPattern5()):
-            return self.formulaPattern5()
-        elif (self.isPattern6()):
-            return self.formulaPattern6()
-        elif (self.isPattern7()):
-            return self.formulaPattern7()
-        else:
-            return None
+        if (self.numberOfFormulas == 3):
+
+            if (self.__isPattern1()):
+                return self.__formulaPattern1()
+            elif (self.__isPattern2()):
+                return self.__formulaPattern2()
+            elif (self.__isPattern3()):
+                return self.__formulaPattern3()
+            elif (self.__isPattern4()):
+                return self.__formulaPattern4()
+            elif (self.__isPattern5()):
+                return self.__formulaPattern5()
+            elif (self.__isPattern6()):
+                return self.__formulaPattern6()
+            elif (self.__isPattern7()):
+                return self.__formulaPattern7()
+
+        return None
         
-    def formulaPattern1(self):
+    def __formulaPattern1(self):
 
         result = "{} {} {} {} {} {} {}".format(self.leftnumber1,
                                                self.outOperator1,
@@ -91,7 +99,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern2(self):
+    def __formulaPattern2(self):
 
         result = "( {} {} {} {} {} ) {} {}".format(self.leftnumber1,
                                                    self.outOperator1,
@@ -103,7 +111,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern3(self):
+    def __formulaPattern3(self):
 
         result = "{} {} ( {} {} {} {} {} )".format(self.leftnumber1,
                                                    self.outOperator1,
@@ -115,7 +123,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern4(self):
+    def __formulaPattern4(self):
 
         result = "( {} {} {} ) {} ( {} {} {} )".format(self.leftnumber1,
                                                        self.outOperator1,
@@ -127,7 +135,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern5(self):
+    def __formulaPattern5(self):
 
         result = "( {} {} {} ) {} {} {} {}".format(self.leftnumber1,
                                                    self.outOperator1,
@@ -139,7 +147,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern6(self):
+    def __formulaPattern6(self):
 
         result = "{} {} ( {} {} {} ) {} {}".format(self.leftnumber1,
                                                    self.outOperator1,
@@ -151,7 +159,7 @@ class Calculator:
 
         return result
 
-    def formulaPattern7(self):
+    def __formulaPattern7(self):
 
         result = "{} {} {} {} ( {} {} {} )".format(self.leftnumber1,
                                                    self.outOperator1,
@@ -163,7 +171,7 @@ class Calculator:
 
         return result
 
-    def isPattern1(self):
+    def __isPattern1(self):
         
         resulto = 0
 
@@ -376,7 +384,7 @@ class Calculator:
                     else:
                         return False
 
-    def isPattern2(self):
+    def __isPattern2(self):
 
         resulto = 0
 
@@ -453,7 +461,7 @@ class Calculator:
         else:
             return False
  
-    def isPattern3(self):
+    def __isPattern3(self):
 
         resulto = 0
 
@@ -532,7 +540,7 @@ class Calculator:
         else:
             return False
         
-    def isPattern4(self):
+    def __isPattern4(self):
         
         resulta1 = 0
 
@@ -577,7 +585,7 @@ class Calculator:
         else:
             return False
 
-    def isPattern5(self):
+    def __isPattern5(self):
 
         resulta = 0
 
@@ -658,7 +666,7 @@ class Calculator:
             else:
                 return False
 
-    def isPattern6(self):
+    def __isPattern6(self):
         
         resulta = 0
 
@@ -739,7 +747,7 @@ class Calculator:
             else:
                 return False
 
-    def isPattern7(self):
+    def __isPattern7(self):
 
         resulta = 0
         
