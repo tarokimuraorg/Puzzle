@@ -1,7 +1,5 @@
 class Calculator:
 
-    numberOfFormulas = 0
-
     leftnumber1 = 0
     leftnumber2 = 0
     leftnumber3 = 0
@@ -18,13 +16,15 @@ class Calculator:
     outOperator2 = ""
     outOperator3 = ""
     
+    formulas = []
     answer = 0
 
     def __init__(self, formulas, answer):
 
-        self.numberOfFormulas = len(formulas)
+        self.formulas = formulas
+        self.answer = answer
 
-        if (self.numberOfFormulas == 3):
+        if (len(self.formulas) == 3):
 
             formula1 = formulas[0]
             formula2 = formulas[1]
@@ -64,11 +64,9 @@ class Calculator:
             else:
                 self.outOperator3 = self.inOperator3
 
-            self.answer = answer
-
     def formula(self):
 
-        if (self.numberOfFormulas == 3):
+        if (len(self.formulas) == 3):
 
             if (self.__isPattern1()):
                 return self.__formulaPattern1()

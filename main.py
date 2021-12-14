@@ -9,13 +9,20 @@ if __name__ == "__main__":
     formula = None
     cnt = 0
 
+    objNumbers = GetNumbers(3,4,7,8)
+    objOperator = GetOperator()
+
     while (formula is None):
+
+        numbers = objNumbers.sort()
+        operators = objOperator.select()
+
+        objFormulas = GetFormulas(numbers, operators)
+        formulas = objFormulas.generate()
     
-        numbers = GetNumbers(3,4,7,8).sort()
-        operators = GetOperator().select()
-        formulas = GetFormulas(numbers, operators).generate()
-    
-        formula = Calculator(formulas, answer).formula()
+        objCalculator = Calculator(formulas, answer)
+        formula = objCalculator.formula()
+
         cnt += 1
 
         if (cnt == 3000):
